@@ -69,3 +69,68 @@ def eliminar_cliente():
     cursor.close()
     conexion.close()
     print("Cliente eliminado con éxito.")
+
+
+def mostrar_all_destinos():
+    conexion = obtener_conexion()
+    cursor = conexion.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM destinos")
+    destinos = cursor.fetchall()
+
+    for destino in destinos:
+        for clave in destino:
+            if clave not in ["CreatedAt", "UpdatedAt"]:
+                print(f"{clave}: {destino[clave]}", end=" | ")
+        print()
+
+    cursor.close()
+    conexion.close()
+
+
+def agregar_destino():
+    ciudad = input("Ciudad destino: ")
+    pais = input("País destino: ")
+    costo = input("Costo base: ")
+    disponibilidad = True if input("Disponibilidad (1: disponible, 0:no disponible): ")=="1" else False
+    
+
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+    sql = "INSERT INTO destinos (Ciudad, Pais, CostoBase, Disponible) VALUES (%s, %s, %s, %s)"
+    valores = (ciudad, pais, costo, disponibilidad)
+    cursor.execute(sql, valores)
+    conexion.commit()
+    cursor.close()
+    conexion.close()
+    print("Destino agregado con éxito.")
+
+
+def modificar_destino():
+    id_destino = input("ID del destino a modificar: ")
+    nueva_ciudad = input("Nueva ciudad: ")
+    nuevo_pais = input("Nuevo país: ")
+    nuevo_costo = input("Nuevo costo base: ")
+    disponibilidad = True if input("Actualizar disponibilidad (1: disponible, 0:no disponible): ")=="1" else False
+
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+    sql = "UPDATE Destinos SET Ciudad = %s, Pais = %s, CostoBase = %s, Disponible = %s WHERE id = %s"
+    valores = (nueva_ciudad, nuevo_pais, nuevo_costo, disponibilidad, id_destino)
+    cursor.execute(sql, valores)
+    conexion.commit()
+    cursor.close()
+    conexion.close()
+    print("Destino modificado con éxito.")
+
+
+def eliminar_destino():
+    id_destino = input("ID del destino a eliminar: ")
+
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+    sql = "DELETE FROM destinos WHERE ID = %s"
+    cursor.execute(sql, (id_destino,))
+    conexion.commit()
+    cursor.close()
+    conexion.close()
+    print("Destino eliminado con éxito.")
