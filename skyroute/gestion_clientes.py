@@ -1,4 +1,4 @@
-from conexion_base_datos import traer_all_clientes
+from conexion_base_datos import mostrar_all_clientes, agregar_cliente, modificar_cliente, eliminar_cliente
 
 
 def gestionar_clientes():
@@ -13,53 +13,35 @@ def gestionar_clientes():
         print("-------------------------------\n")
         opcion = input("Seleccione una opción: ")
 
+
         if opcion == "1":
             print("\n\nListado de Clientes\n")
-            clientes = traer_all_clientes()
-            for cliente in clientes:
-                for clave in cliente:
-                    if clave not in ["CreatedAt", "UpdatedAt"]:
-                        print(f"{clave}: {cliente[clave]}", end=" | ")
-                print()
+            mostrar_all_clientes()
             input("Continuar ...")
 
-        elif opcion == "2":
-            print("Complete los siguientes datos")
-            cuit = input ("CUIT: ")
-            razon = input ("Razón Social: ")
-            email= input ("Email: ")
-            print ("-------------------------------\n")
-            cliente = {
-                "id": len(clientes)+1,
-                "cuit": cuit,
-                "razon": razon,
-                "email": email
-                }
-            clientes.append(cliente)
 
-            print ("Se ha agregado el siguiente cliente con éxito:")
-            print (f"Nro. Cliente: {len(clientes)+1} - CUIT: {cuit} - Razon Social: {razon} - Email: {email}")
+        elif opcion == "2":
+            print("\nAgregar Cliente\n")
+            agregar_cliente()
             input("Continuar ...")
             
                  
         elif opcion == "3":
-            cuit = input ("Ingrese el CUIT del cliente a modificar: ")
-            razon = input("Ingrese la nueva razón social: ") 
-            email = input("Ingrese el nuevo email: ")
-            print ("-------------------------------\n")
-            print (f"CUIT: {cuit} - Razon Social: {razon} - Email: {email}")
-            print ("Se han modificado los datos del cliente") 
+            print("\nModificar Cliente\n")
+            modificar_cliente()
             input("Continuar ...")
 
+
         elif opcion == "4":
-            cuit= input ("Ingrese el cuit del cliente a eliminar: ")
-            print ("-------------------------------\n")
-            print(f"Se ha eliminado el cliente CUIT {cuit} con éxito")
+            print("\nEliminar Cliente\n")
+            eliminar_cliente()
             input("Continuar ...")
 
 
         elif opcion == "5":
                 salir = True
+
+
         else: 
             print("Ingrese una opción válida")
             input("Continuar ...")                     
