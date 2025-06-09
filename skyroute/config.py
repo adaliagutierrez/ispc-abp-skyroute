@@ -1,7 +1,7 @@
 db_config = {
     "host": "localhost",
-    "user": "ada",
-    "password": "Tatiana31!",
+    "user": "root",
+    "password": "Tatiana3110!",
     "database": "SKYROUTE",
-    "port": "3110"
+    "port": "3306"
 }
