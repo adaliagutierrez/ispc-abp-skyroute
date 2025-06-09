@@ -1,5 +1,7 @@
-def gestionar_clientes():
+from conexion_base_datos import traer_all_clientes
 
+
+def gestionar_clientes():
     salir = False
     while not salir:
         print("\n\nGESTIONAR CLIENTES ")
@@ -12,9 +14,13 @@ def gestionar_clientes():
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
+            print("\n\nListado de Clientes\n")
+            clientes = traer_all_clientes()
             for cliente in clientes:
-                print(f"Nro de Cliente: {cliente["id"]} - CUIT: {cliente["cuit"]} - Razon Social: {cliente["razon"]} - Email: {cliente["email"]}")
-
+                for clave in cliente:
+                    if clave not in ["CreatedAt", "UpdatedAt"]:
+                        print(f"{clave}: {cliente[clave]}", end=" | ")
+                print()
             input("Continuar ...")
 
         elif opcion == "2":
