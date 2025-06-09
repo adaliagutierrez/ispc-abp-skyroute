@@ -1,15 +1,25 @@
 from conexion_base_datos import mostrar_all_clientes, agregar_cliente, modificar_cliente, eliminar_cliente
+import os
+
+
+def limpiar_pantalla():
+    if os.name == "nt":
+        os.system("cls")  # Para Windows
+    else:
+        os.system("clear")  # Para sistemas Unix
 
 
 def gestionar_clientes():
     salir = False
     while not salir:
+        limpiar_pantalla()
+
         print("\n\nGESTIONAR CLIENTES ")
         print("1. Ver Clientes")
         print("2. Agregar Cliente")
         print("3. Modificar Cliente")
         print("4. Eliminar Cliente")
-        print("5. Volver al Menú Principal")
+        print("9. Volver al Menú Principal")
         print("-------------------------------\n")
         opcion = input("Seleccione una opción: ")
 
@@ -38,7 +48,7 @@ def gestionar_clientes():
             input("Continuar ...")
 
 
-        elif opcion == "5":
+        elif opcion == "9":
                 salir = True
 
 
