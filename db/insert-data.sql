@@ -1,3 +1,6 @@
+-- Este archivo solo inserta registros a las diferentes tablas. Debe ejecutarse luego de crear la base de datos (archivo "db.sql")
+
+-- Sentencias DML que insertan 50 registros en la tabla Clientes. Se separan en instrucciones individuales para deteccion de errores
 insert into Clientes (CUIT, RazonSocial, Email) values ('44-63247030-0', 'Wendye Sergeant', 'wsergeant0@intel.com');
 insert into Clientes (CUIT, RazonSocial, Email) values ('62-78379058-1', 'Marge Holtum', 'mholtum1@so-net.ne.jp');
 insert into Clientes (CUIT, RazonSocial, Email) values ('31-48899922-1', 'Mada Corben', 'mcorben2@bbc.co.uk');
@@ -50,6 +53,7 @@ insert into Clientes (CUIT, RazonSocial, Email) values ('47-98516425-6', 'Elston
 insert into Clientes (CUIT, RazonSocial, Email) values ('07-62827680-2', 'Jillie Stiegers', 'jstiegers1d@ucsd.edu');
 
 
+-- Sentencias DML que insertan 30 registros en la tabla Destinos. Se separan en instrucciones individuales para deteccion de errores
 insert into Destinos (Ciudad, Pais, CostoBase, Disponible) values ('New York', 'USA', 668383.12, false);
 insert into Destinos (Ciudad, Pais, CostoBase, Disponible) values ('Paris', 'France', 571833.86, false);
 insert into Destinos (Ciudad, Pais, CostoBase, Disponible) values ('Addis Ababa', 'Ethiopia', 162072.31, false);
@@ -82,6 +86,7 @@ insert into Destinos (Ciudad, Pais, CostoBase, Disponible) values ('Frankfurt', 
 insert into Destinos (Ciudad, Pais, CostoBase, Disponible) values ('Sydney', 'Australia', 133453.56, true);
 
 
+-- Sentencias DML que insertan 100 registros en la tabla Ventas. Se separan en instrucciones individuales para deteccion de errores
 insert into Ventas (IdCliente, IdDestino, FechaVenta, Costo, Estado, TimestampAnulacion) values (22, 15, '2025-04-19', 834128.9, 'Anulada', null);
 insert into Ventas (IdCliente, IdDestino, FechaVenta, Costo, Estado, TimestampAnulacion) values (35, 3, '2025-03-01', 159507.88, 'Activa', null);
 insert into Ventas (IdCliente, IdDestino, FechaVenta, Costo, Estado, TimestampAnulacion) values (7, 20, '2025-03-26', 692443.67, 'Activa', null);

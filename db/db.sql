@@ -1,3 +1,9 @@
+-- Este archivo crea la estructura de la Base de Datos.
+-- Se crea la DB con nombre "SKYROUTE" y la estructura de las tablas:
+-- Clientes - Destinos - Ventas
+-- Estas son sentencias DDL (de definicion de datos y estructura)
+
+
 CREATE DATABASE SKYROUTE;
 
 
