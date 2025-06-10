@@ -11,7 +11,7 @@
 - Gutierrez Bernal, Adalia Scarlett - DNI 42439229 - [@adaliagutierrez](https://github.com/adaliagutierrez)
 
 
-## Instrucciones básicas de ejecución del proyecto
+## Instrucciones de ejecución del proyecto
 
 1. Clonar el repositorio:
    ```bash
