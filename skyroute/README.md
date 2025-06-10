@@ -33,14 +33,15 @@
 
 4. Configurar los datos de conexión a la base de datos en el archivo `skyroute/config.py`.
 
-5. Ejecutar el programa principal:
+5. Ejecutar la construcción de la BD con el archivo `db/db.sql` dentro de tu servidor MySQL.
+
+6. Cargar de información las tablas con el archivo `db/insert-data.sql`.
+
+7. Ejecutar el programa principal:
    ```bash
    python main.py
    ```
-
-6. Ejecutar la construcción de la BD con el archivo `db/db.sql` dentro de tu servidor MySQL.
-
-7. Cargar de información las tablas con el archivo `db/insert-data.sql`.
+8. Navegar entre las opciones ingresando la opción deseada y presionando Enter.
 
 ## Estructura del repositorio
 
