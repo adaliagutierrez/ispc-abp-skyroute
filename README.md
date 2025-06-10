@@ -63,6 +63,6 @@ db/
 
 entregables/
 ├── video_presentacion.mp4             # Video de presentación del grupo
-├── Poster-Defensa-en-el-Proyecto-ABP  # Configuración de conexión a la base de datos
-└── Proyecto-SkyRoute-ABP              # Archivo principal con menú de opcionesskyroute/
+├── Poster-Defensa-en-el-Proyecto-ABP  # Poster de presentación para la defensa oral del proyecto
+└── Proyecto-SkyRoute-ABP              # Archivo con la descripción del proyecto
 ```
